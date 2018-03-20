@@ -5,7 +5,12 @@ const dbString =
   process.env.DATABASE_URL ||
   "postgres://postgres:12345@localhost:5432/bebetter";
 
+const ssl = !!process.env.DATABASE_URL;
+
 const db = new Sequelize(dbString, {
+  dialectOptions: {
+    ssl
+  },
   pool: {
     max: 5,
     min: 0,
