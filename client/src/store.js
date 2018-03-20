@@ -3,7 +3,7 @@ import { Map } from "immutable";
 import { routerMiddleware } from "react-router-redux";
 import createHistory from "history/createBrowserHistory";
 import rootReducer from "./reducers";
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas";
 
@@ -15,7 +15,8 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
   Map(),
-  composeWithDevTools(applyMiddleware(historyMiddleware, sagaMiddleware))
+  // composeWithDevTools(applyMiddleware(historyMiddleware, sagaMiddleware)) delete for production (is temporary)
+  applyMiddleware(historyMiddleware, sagaMiddleware)
 );
 
 sagaMiddleware.run(rootSaga);
