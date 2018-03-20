@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start":
-      "concurrently \"cd server && npm start\" \"cd client && npm start\"",
-    "build": "cd client && npm build",
-    "install": "(cd server && npm i) && (cd client && npm i)",
-    "start:prod": "cd server && npm start:prod",
-    "heroku-postbuild": "npm build"
+      "concurrently \"cd server && yarn start\" \"cd client && yarn start\"",
+    "build": "cd client && yarn build",
+    "install": "(cd server && yarn) && (cd client && yarn)",
+    "start:prod": "cd server && yarn start:prod",
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
     "concurrently": "^3.5.0"
