@@ -1,4 +1,4 @@
-const router = require("./").default;
+const router = require("./").apiRouter;
 const bodyParser = require("koa-bodyparser");
 const validate = require("validate.js");
 const { Note, constraints } = require("../db");

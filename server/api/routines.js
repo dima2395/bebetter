@@ -1,4 +1,4 @@
-const router = require("./").default;
+const router = require("./").apiRouter;
 const bodyParser = require("koa-bodyparser");
 const { Routine, RoutinesProgress, createOrUpdate, db } = require("../db");
 
