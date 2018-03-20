@@ -5,11 +5,17 @@ const app = new Koa();
 
 const PORT = process.env.PORT || 4000;
 
-const api_router = combineRouters([
-  require("./api/notes").default,
-  require("./api/routines").default
-]);
+const notes_router = require("./api/notes").default;
+const routines_router = require("./api/routines").default;
 
-app.use(logger("tiny")).use(api_router);
+// doesnt work
+const api_router = combineRouters(notes_router, routines_router);
+
+// app.use(api_router);
+
+app
+  .use(logger("tiny"))
+  .use(notes_router.routes())
+  .use(routines_router.routes());
 
 app.listen(PORT);

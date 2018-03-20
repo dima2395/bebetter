@@ -4,7 +4,6 @@ const validate = require("validate.js");
 const { Note, constraints } = require("../db");
 
 router.get("/notes", async ctx => {
-  // throw Error;
   ctx.body = await Note.getNotes();
 });
 
