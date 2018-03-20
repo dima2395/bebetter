@@ -1,0 +1,20 @@
+{
+  "name": "bebetter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "scripts": {
+    "start":
+      "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "build": "cd client && npm build",
+    "install": "(cd server && npm i) && (cd client && npm i)",
+    "start:prod": "cd server && npm start:prod",
+    "heroku-postbuild": "npm build"
+  },
+  "dependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
