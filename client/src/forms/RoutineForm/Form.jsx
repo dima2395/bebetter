@@ -3,10 +3,9 @@ import { Button, Form, Message } from "semantic-ui-react";
 import { InputField, SelectField } from "../inputs";
 import { validate as validation } from "validate.js";
 import { Field, reduxForm } from "redux-form/immutable";
-
+import Immutable from "immutable";
 const form = props => {
   const { handleSubmit, success, submitting } = props;
-  console.log("submitting", submitting);
   const routinesStatuses = [
     {
       key: "completed",
@@ -58,29 +57,26 @@ const form = props => {
   );
 };
 
-// const constraints = {
-//   title: {
-//     presence: {
-//       allowEmpty: false
-//     },
-//     length: {
-//       maximum: 60
-//     }
-//   },
-//   text: {
-//     presence: {
-//       allowEmpty: false
-//     }
-//   }
-// };
+const constraints = {
+  text: {
+    presence: {
+      allowEmpty: false
+    },
+    length: {
+      maximum: 100
+    }
+  }
+};
 
-// const validate = values => {
-//   return validation(values.toJS(), constraints) || {};
-// };
+const validate = values => {
+  console.log(values);
+  return validation(values.toJS(), constraints) || {};
+};
 
 export default reduxForm({
   form: "routine",
-  initialValues: {
+  initialValues: Immutable.fromJS({
     status: "processing"
-  }
+  }),
+  validate
 })(form);

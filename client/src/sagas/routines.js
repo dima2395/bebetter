@@ -32,10 +32,11 @@ export function* createRoutine(action) {
     yield put(stopSubmit(FORM_NAME));
     yield put(reset(FORM_NAME));
   } catch (e) {
+    const errors = e.response.data.get("errors").toJS();
     yield put({
       type: actionTypes.create.fail
     });
-    yield put(stopSubmit(FORM_NAME));
+    yield put(stopSubmit(FORM_NAME, errors));
   }
 }
 
@@ -43,16 +44,19 @@ export function* updateRoutine(action) {
   try {
     yield put(startSubmit(FORM_NAME));
     const res = yield call(api.routines.update, action.id, action.routine);
+
     yield put({
       type: actionTypes.update.success,
       routine: res.data.get("routine")
     });
+
     yield put(stopSubmit(FORM_NAME));
   } catch (e) {
+    const errors = e.response.data.get("errors").toJS();
     yield put({
       type: actionTypes.update.fail
     });
-    yield put(stopSubmit(FORM_NAME));
+    yield put(stopSubmit(FORM_NAME, errors));
   }
 }
 
