@@ -1,11 +1,18 @@
 import axios from "axios";
 import Immutable from "immutable";
+import { store } from "store";
+import { addMessage } from "reducers/messages";
 
 const config = {
   baseURL: "/api/",
   transformResponse: [
     function(data) {
       const immutableData = Immutable.fromJS(JSON.parse(data));
+      const message = immutableData.get("message");
+      if (message) {
+        // if response data has massage dispatch it
+        store.dispatch(addMessage(message));
+      }
       return immutableData;
     }
   ]

@@ -1,6 +1,7 @@
 $header-height: 50px;
 $sidebar-width: 100px;
 $main-color: #ccc;
+$global-message-width: 250px;
 * {
   box-sizing: border-box;
 }
@@ -272,6 +273,51 @@ body {
       .status {
         width: auto !important;
       }
+    }
+  }
+}
+
+.app-wrapper {
+  & > .global-messages {
+    width: $global-message-width;
+    position: fixed;
+    top: $header-height + 20;
+    right: 30px;
+    z-index: 9000;
+  }
+}
+
+// .example-enter {
+//   opacity: 0.01;
+// }
+
+// .example-enter.example-enter-active {
+//   opacity: 1;
+//   transition: opacity 500ms ease-in;
+// }
+
+// .example-leave {
+//   opacity: 1;
+// }
+
+// .example-leave.example-leave-active {
+//   opacity: 0.01;
+//   transition: opacity 300ms ease-in;
+// }
+
+.addMessage-animation {
+  &-enter {
+    transform: translateX(110%);
+    &-active#{&} {
+      transform: translateX(0%);
+      transition: transform 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
+  &-leave {
+    transform: translateX(0%);
+    &-active#{&} {
+      transform: translateX(110%);
+      transition: transform 500ms cubic-bezier(0.77, 0, 0.175, 1);
     }
   }
 }

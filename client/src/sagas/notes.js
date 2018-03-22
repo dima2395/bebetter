@@ -58,7 +58,9 @@ export function* updateNote(action) {
 
 export function* deleteNote(action) {
   try {
+    console.log("before res", action.id);
     const res = yield call(api.notes.delete, action.id);
+    console.log("after res");
     yield put({ type: actionTypes.delete.success, id: res.data.get("id") });
     yield put(closeModal("note_delete"));
   } catch (e) {
