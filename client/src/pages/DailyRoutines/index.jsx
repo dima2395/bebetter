@@ -5,6 +5,7 @@ import { Segment, Grid, Button, Icon } from "semantic-ui-react";
 import RoutineForm from "forms/RoutineForm";
 import RoutineModal from "modals/RoutineModal";
 import RoutineProgressModal from "modals/RoutineProgressModal";
+import RoutineDeleteModal from "modals/DeleteRoutineModal";
 import Routines from "./Routines";
 import Progress from "./Progress";
 import { openModal } from "reducers/modals";
@@ -35,7 +36,11 @@ class DailyRoutine extends React.Component {
   };
 
   openDeleteRoutineModal = id => {
-    this.props.deleteRoutine(id);
+    this.props.openModal("routine_delete", {
+      header: "Delete routine",
+      content: "Are you sure you want to delete this routine?",
+      deleteAction: this.props.deleteRoutine.bind(null, id)
+    });
   };
 
   componentDidMount() {
@@ -71,6 +76,7 @@ class DailyRoutine extends React.Component {
         </Grid>
         <RoutineModal />
         <RoutineProgressModal className="routine-progress-modal" />
+        <RoutineDeleteModal />
       </div>
     );
   }

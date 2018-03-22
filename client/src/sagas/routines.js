@@ -1,6 +1,7 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import api from "api";
 import { actionTypes } from "reducers/routines";
+import { closeModal } from "reducers/modals";
 import { startSubmit, stopSubmit, reset } from "redux-form/immutable";
 
 const FORM_NAME = "routine";
@@ -67,6 +68,7 @@ export function* deleteRoutine(action) {
       type: actionTypes.delete.success,
       id: res.data.get("id")
     });
+    yield put(closeModal("routine_delete"));
   } catch (e) {
     yield put({
       type: actionTypes.delete.fail
