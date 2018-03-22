@@ -1,6 +1,6 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import api from "api";
-import { actionTypes, resetNoteFormMessage } from "reducers/notes";
+import { actionTypes } from "reducers/notes";
 import { closeModal } from "reducers/modals";
 import { startSubmit, stopSubmit, reset } from "redux-form/immutable";
 
@@ -16,15 +16,13 @@ export function* fetchNotes() {
 }
 
 export function* createNote(action) {
-  yield put(resetNoteFormMessage());
   try {
     yield put(startSubmit(FORM_NAME));
     const res = yield call(api.notes.create, action.note);
 
     yield put({
       type: actionTypes.create.success,
-      note: res.data.get("note"),
-      success: res.data.get("success")
+      note: res.data.get("note")
     });
 
     yield put(stopSubmit(FORM_NAME));
@@ -37,15 +35,13 @@ export function* createNote(action) {
 }
 
 export function* updateNote(action) {
-  yield put(resetNoteFormMessage());
   try {
     yield put(startSubmit(FORM_NAME));
     const res = yield call(api.notes.update, action.id, action.note);
 
     yield put({
       type: actionTypes.update.success,
-      note: res.data.get("note"),
-      success: res.data.get("success")
+      note: res.data.get("note")
     });
 
     yield put(stopSubmit(FORM_NAME));
@@ -58,9 +54,7 @@ export function* updateNote(action) {
 
 export function* deleteNote(action) {
   try {
-    console.log("before res", action.id);
     const res = yield call(api.notes.delete, action.id);
-    console.log("after res");
     yield put({ type: actionTypes.delete.success, id: res.data.get("id") });
     yield put(closeModal("note_delete"));
   } catch (e) {

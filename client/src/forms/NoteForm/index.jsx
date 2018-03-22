@@ -1,15 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid } from "semantic-ui-react";
-import { createNote, updateNote, resetNoteFormMessage } from "reducers/notes";
+import { createNote, updateNote } from "reducers/notes";
 import Form from "./Form";
-import { reset } from "redux-form";
 
 class FormContainer extends React.Component {
-  componentDidMount() {
-    this.props.resetNoteFormMessage();
-  }
-
   submit = values => {
     const { note } = this.props;
     const data = values.toJS();
@@ -38,9 +32,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   createNote,
-  updateNote,
-  resetNoteFormMessage,
-  resetForm: reset
+  updateNote
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);

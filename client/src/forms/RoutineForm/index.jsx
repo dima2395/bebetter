@@ -4,10 +4,6 @@ import { createRoutine, updateRoutine } from "reducers/routines";
 import Form from "./Form";
 
 class FormContainer extends React.Component {
-  // componentDidMount() {
-  //   this.props.resetNoteFormMessage();
-  // }
-
   submit = values => {
     const { routine } = this.props;
     const data = values.toJS();
