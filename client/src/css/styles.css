@@ -677,4 +677,8 @@ body {
 .routine-progress-modal .content .day {
   cursor: pointer;
 }
+
+.modals .modal .routine-form .status {
+  width: auto !important;
+}
 /*# sourceMappingURL=styles.css.map */

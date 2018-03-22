@@ -28,6 +28,7 @@ const form = props => {
   ];
   return (
     <Form
+      className="routine-form"
       onSubmit={handleSubmit}
       loading={submitting}
       success={success ? true : false}
@@ -44,6 +45,7 @@ const form = props => {
         placeholder="Enter text ..."
       />
       <Field
+        className="status"
         component={SelectField}
         name="status"
         label="Status"

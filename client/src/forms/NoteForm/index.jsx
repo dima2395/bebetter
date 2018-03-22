@@ -24,17 +24,7 @@ class FormContainer extends React.Component {
   render() {
     const { success, note } = this.props;
     return (
-      <div className="note">
-        <Grid>
-          <Grid.Column computer={12} tablet={16} mobile={16}>
-            <Form
-              onSubmit={this.submit}
-              initialValues={note}
-              {...{ success }}
-            />
-          </Grid.Column>
-        </Grid>
-      </div>
+      <Form onSubmit={this.submit} initialValues={note} {...{ success }} />
     );
   }
 }
