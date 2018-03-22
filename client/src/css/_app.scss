@@ -133,7 +133,7 @@ body {
       font-size: 18px;
       .diary-page {
         .diary-wrapper {
-          min-height: 500px;
+          min-height: 750px;
           & > .diary {
             position: relative;
             & > .day {
@@ -216,7 +216,7 @@ body {
       }
       .daily-routine-page {
         .routines {
-          min-height: 500px;
+          min-height: 750px;
           margin-top: 10px;
           .routine {
             &-status {

@@ -555,7 +555,7 @@ body {
 }
 
 .app .main .page .diary-page .diary-wrapper {
-  min-height: 500px;
+  min-height: 750px;
 }
 
 .app .main .page .diary-page .diary-wrapper > .diary {
@@ -645,7 +645,7 @@ body {
 }
 
 .app .main .page .daily-routine-page .routines {
-  min-height: 500px;
+  min-height: 750px;
   margin-top: 10px;
 }
 
