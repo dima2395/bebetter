@@ -1,6 +1,7 @@
 const router = require("./").apiRouter;
 const bodyParser = require("koa-bodyparser");
 const { Routine, RoutinesProgress, createOrUpdate, db } = require("../db");
+const { createMessage } = require("../utils");
 
 router.get("/routines", async ctx => {
   let routines = await Routine.getRoutines();
@@ -18,10 +19,7 @@ router.post("/routines", bodyParser(), async ctx => {
 
   ctx.body = {
     routine: new_routine,
-    success: {
-      title: "Success!",
-      message: "Routine successfully created"
-    }
+    message: createMessage("success", "Routine created.")
   };
 });
 
@@ -42,10 +40,7 @@ router.put("/routines/:id", bodyParser(), async ctx => {
 
   ctx.body = {
     routine: new_routine,
-    success: {
-      title: "Success!",
-      message: "Routine successfully updated"
-    }
+    message: createMessage("success", "Routine updated.")
   };
 });
 
@@ -58,10 +53,7 @@ router.delete("/routines/:id", async ctx => {
   });
   ctx.body = {
     id: Number(id),
-    success: {
-      title: "Success!",
-      message: "Routine successfully deleted"
-    }
+    message: createMessage("success", "Routine deleted.")
   };
 });
 

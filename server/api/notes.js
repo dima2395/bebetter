@@ -2,6 +2,7 @@ const router = require("./").apiRouter;
 const bodyParser = require("koa-bodyparser");
 const validate = require("validate.js");
 const { Note, constraints } = require("../db");
+const { createMessage } = require("../utils");
 
 router.get("/notes", async ctx => {
   ctx.body = await Note.getNotes();
@@ -28,10 +29,7 @@ router.post("/notes", bodyParser(), async ctx => {
     await note.save();
     ctx.body = {
       note,
-      success: {
-        title: "Success!",
-        message: "Note successfully created"
-      }
+      message: createMessage("success", "Note created.")
     };
   } catch (e) {
     ctx.status = 400;
@@ -65,10 +63,7 @@ router.put("/notes/:id", bodyParser(), async ctx => {
     const updated_note = await note.update({ title, text });
     ctx.body = {
       note: updated_note,
-      success: {
-        title: "Success!",
-        message: "Note successfully updated"
-      }
+      message: createMessage("success", "Note updated.")
     };
   } catch (e) {
     ctx.status = 400;
@@ -89,7 +84,7 @@ router.delete("/notes/:id", async ctx => {
   });
   ctx.body = {
     id: Number(id),
-    message: "Note successfully deleted"
+    message: createMessage("success", "Note deleted.")
   };
 });
 
