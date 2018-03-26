@@ -10,7 +10,7 @@ const form = props => {
     {
       key: "completed",
       value: "completed",
-      text: "Completed",
+      text: "Приобретена",
       icon: {
         name: "circle",
         color: "green"
@@ -19,7 +19,7 @@ const form = props => {
     {
       key: "processing",
       value: "processing",
-      text: "Processing",
+      text: "В процессе приобретения",
       icon: {
         name: "circle",
         color: "yellow"
@@ -41,19 +41,19 @@ const form = props => {
       <Field
         component={InputField}
         name="text"
-        label="Text"
-        placeholder="Enter text ..."
+        label="Текст"
+        placeholder="Текст ..."
       />
       <Field
         className="status"
         component={SelectField}
         name="status"
-        label="Status"
-        placeholder="Status"
+        label="Статус"
+        placeholder="Статус ..."
         options={routinesStatuses}
       />
       <Button color="green" type="submit">
-        Save
+        Сохранить
       </Button>
     </Form>
   );

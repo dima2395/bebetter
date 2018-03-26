@@ -19,7 +19,7 @@ router.post("/routines", bodyParser(), async ctx => {
 
   ctx.body = {
     routine: new_routine,
-    message: createMessage("success", "Routine created.")
+    message: createMessage("success", "Привычка создана.")
   };
 });
 
@@ -40,7 +40,7 @@ router.put("/routines/:id", bodyParser(), async ctx => {
 
   ctx.body = {
     routine: new_routine,
-    message: createMessage("success", "Routine updated.")
+    message: createMessage("success", "Привычка обновлена.")
   };
 });
 
@@ -53,7 +53,7 @@ router.delete("/routines/:id", async ctx => {
   });
   ctx.body = {
     id: Number(id),
-    message: createMessage("success", "Routine deleted.")
+    message: createMessage("success", "Привычка удалена.")
   };
 });
 

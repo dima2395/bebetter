@@ -1,8 +1,9 @@
-const createMessage = (
-  type,
-  text,
-  title = `${type.replace(/\b\w/g, l => l.toUpperCase())}!`
-) => ({
+const russianTranslation = {
+  success: "Успех",
+  error: "Ошибка"
+};
+
+const createMessage = (type, text, title = `${russianTranslation[type]}!`) => ({
   type,
   title,
   text

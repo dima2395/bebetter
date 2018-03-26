@@ -31,7 +31,7 @@ body {
       background-color: #1b1b1b;
       line-height: $header-height;
       font-size: 26px;
-      font-family: "Josefin Sans", sans-serif;
+      font-family: "PT Sans", sans-serif;
       font-weight: 400;
       letter-spacing: 2px;
       a {
@@ -52,7 +52,7 @@ body {
       height: calc(100vh - #{$header-height});
       width: $sidebar-width; //wtf? :)
       .menu {
-        font-family: "Josefin Sans", sans-serif;
+        font-family: "PT Sans", sans-serif;
         font-weight: 200;
         list-style-type: none;
         margin: 0;
@@ -269,9 +269,10 @@ body {
 
 .modals {
   .modal {
-    .routine-form {
-      .status {
-        width: auto !important;
+    .routine-form.form.ui {
+      .field > .selection.dropdown.status {
+        min-width: 250px;
+        max-width: 300px;
       }
     }
   }
@@ -286,24 +287,6 @@ body {
     z-index: 9000;
   }
 }
-
-// .example-enter {
-//   opacity: 0.01;
-// }
-
-// .example-enter.example-enter-active {
-//   opacity: 1;
-//   transition: opacity 500ms ease-in;
-// }
-
-// .example-leave {
-//   opacity: 1;
-// }
-
-// .example-leave.example-leave-active {
-//   opacity: 0.01;
-//   transition: opacity 300ms ease-in;
-// }
 
 .addMessage-animation {
   &-enter {

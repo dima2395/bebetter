@@ -50,21 +50,21 @@ export default class extends React.Component {
                   color="green"
                   onClick={() => this.props.openRoutineModal(routine)}
                 >
-                  Edit
+                  Изменить
                 </Button>
                 <Button
                   basic
                   color="blue"
                   onClick={() => this.props.openProgressModal(routine)}
                 >
-                  Progress
+                  Прогресс
                 </Button>
                 <Button
                   basic
                   color="red"
                   onClick={() => this.props.openDeleteRoutineModal(id)}
                 >
-                  Delete
+                  Удалить
                 </Button>
               </Button.Group>
             </div>

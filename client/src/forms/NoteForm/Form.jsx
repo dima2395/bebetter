@@ -20,18 +20,18 @@ const form = props => {
       <Field
         component={InputField}
         name="title"
-        label="Title"
-        placeholder="Enter title ..."
+        label="Заголовок"
+        placeholder="Заголовок ..."
       />
       <Field
         component={TextAreaField}
         name="text"
         type="textarea"
-        label="Text"
-        placeholder="Enter note ..."
+        label="Текст"
+        placeholder="Текст ..."
       />
       <Button color="green" type="submit">
-        Save
+        Сохранить
       </Button>
     </Form>
   );

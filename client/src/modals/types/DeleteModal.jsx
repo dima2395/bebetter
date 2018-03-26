@@ -18,9 +18,9 @@ class DeleteNoteModal extends React.Component {
           <p>{content}</p>
         </Modal.Content>
         <Modal.Actions>
-          <Button onClick={closeModal}>Cancel</Button>
+          <Button onClick={closeModal}>Отмена</Button>
           <Button negative onClick={deleteAction} loading={loading}>
-            Delete
+            Удалить
           </Button>
         </Modal.Actions>
       </Modal>

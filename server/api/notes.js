@@ -29,7 +29,7 @@ router.post("/notes", bodyParser(), async ctx => {
     await note.save();
     ctx.body = {
       note,
-      message: createMessage("success", "Note created.")
+      message: createMessage("success", "Заметка создана.")
     };
   } catch (e) {
     ctx.status = 400;
@@ -63,7 +63,7 @@ router.put("/notes/:id", bodyParser(), async ctx => {
     const updated_note = await note.update({ title, text });
     ctx.body = {
       note: updated_note,
-      message: createMessage("success", "Note updated.")
+      message: createMessage("success", "Заметка обновлена.")
     };
   } catch (e) {
     ctx.status = 400;
@@ -84,7 +84,7 @@ router.delete("/notes/:id", async ctx => {
   });
   ctx.body = {
     id: Number(id),
-    message: createMessage("success", "Note deleted.")
+    message: createMessage("success", "Заметка удалена.")
   };
 });
 

@@ -11,19 +11,19 @@ import { openModal } from "reducers/modals";
 class Diary extends React.Component {
   openDeleteNoteModal = id => {
     this.props.openModal("note_delete", {
-      header: "Delete note",
-      content: "Are you sure you want to delete this note?",
+      header: "Удаление заметки",
+      content: "Вы уверены, что хотите удалить эту заметку?",
       deleteAction: this.props.deleteNote.bind(null, id)
     });
   };
 
   openNoteModal = note => {
     let content = <NoteFormContainer />;
-    let header = "Add note";
+    let header = "Добавить заметку";
 
     if (note) {
       content = <NoteFormContainer note={note} />;
-      header = "Edit note";
+      header = "Редактировать заметку";
     }
 
     this.props.openModal("note_create_update", {
@@ -47,17 +47,17 @@ class Diary extends React.Component {
         <Grid>
           <Grid.Column width={12}>
             <Segment loading={loading} className="diary-wrapper">
-              <h1>Diary</h1>
+              <h1>Дневник</h1>
               <Button
                 color="green"
                 onClick={this.openNoteModal.bind(this, null)}
               >
                 <Icon name="plus" />
-                Add Note
+                Добавить заметку
               </Button>
               <Button color="blue" onClick={this.handleRefresh}>
                 <Icon name="refresh" />
-                Sync
+                Обновить
               </Button>
               <div className="diary">
                 <DailyNotes

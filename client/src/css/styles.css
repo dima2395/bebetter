@@ -440,7 +440,7 @@ body {
   background-color: #1b1b1b;
   line-height: 50px;
   font-size: 26px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 2px;
 }
@@ -467,7 +467,7 @@ body {
 }
 
 .app .main .sidebar .menu {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: 200;
   list-style-type: none;
   margin: 0;
@@ -678,8 +678,9 @@ body {
   cursor: pointer;
 }
 
-.modals .modal .routine-form .status {
-  width: auto !important;
+.modals .modal .routine-form.form.ui .field > .selection.dropdown.status {
+  min-width: 250px;
+  max-width: 300px;
 }
 
 .app-wrapper > .global-messages {

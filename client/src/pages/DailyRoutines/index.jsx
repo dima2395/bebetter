@@ -14,12 +14,12 @@ class DailyRoutine extends React.Component {
   openRoutineModal = routine => {
     // if create form
     let content = <RoutineForm />;
-    let header = "Add routine";
+    let header = "Добавить привычку";
 
     // if edit form
     if (routine) {
       content = <RoutineForm routine={routine} />;
-      header = "Edit routine";
+      header = "Редактировать привычку";
     }
 
     this.props.openModal("routine_create_update", {
@@ -31,14 +31,14 @@ class DailyRoutine extends React.Component {
   openProgressModal = routine => {
     this.props.openModal("routine_progress_create_update", {
       content: <Progress routine={routine} />,
-      header: `Progress: "${routine.get("text")}"`
+      header: `Прогресс: "${routine.get("text")}"`
     });
   };
 
   openDeleteRoutineModal = id => {
     this.props.openModal("routine_delete", {
-      header: "Delete routine",
-      content: "Are you sure you want to delete this routine?",
+      header: "Удаление привычки",
+      content: "Вы уверены, что хотите удалить эту привычку?",
       deleteAction: this.props.deleteRoutine.bind(null, id)
     });
   };
@@ -54,7 +54,7 @@ class DailyRoutine extends React.Component {
         <Grid>
           <Grid.Column width={16}>
             <Segment loading={loading}>
-              <h1>Daily Routine</h1>
+              <h1>Привычки</h1>
               <div className="controls">
                 <Button
                   color="green"
@@ -62,7 +62,7 @@ class DailyRoutine extends React.Component {
                   onClick={this.openRoutineModal.bind(this, null)}
                 >
                   <Icon name="plus" />
-                  Add Routine
+                  Добавить привычку
                 </Button>
               </div>
               <Routines

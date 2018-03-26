@@ -11,13 +11,13 @@ class Sidebar extends React.Component {
           <li className="diary">
             <Link to="/diary">
               <Icon name="book" size="large" />
-              <div className="text">Diary</div>
+              <div className="text">Дневник</div>
             </Link>
           </li>
           <li className="daily-routines">
             <Link to="/daily-routines">
               <Icon name="clock" size="large" />
-              <div className="text">Daily Routines</div>
+              <div className="text">Привычки</div>
             </Link>
           </li>
         </ul>
