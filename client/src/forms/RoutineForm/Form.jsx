@@ -62,16 +62,17 @@ const form = props => {
 const constraints = {
   text: {
     presence: {
-      allowEmpty: false
+      allowEmpty: false,
+      message: "^Обязательное поле"
     },
     length: {
-      maximum: 100
+      maximum: 100,
+      message: "^Максимальная длина 100 симоволов"
     }
   }
 };
 
 const validate = values => {
-  console.log(values);
   return validation(values.toJS(), constraints) || {};
 };
 

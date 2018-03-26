@@ -58,7 +58,6 @@ class DailyRoutine extends React.Component {
               <div className="controls">
                 <Button
                   color="green"
-                  size="small"
                   onClick={this.openRoutineModal.bind(this, null)}
                 >
                   <Icon name="plus" />

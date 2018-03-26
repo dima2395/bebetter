@@ -32,10 +32,6 @@ class Diary extends React.Component {
     });
   };
 
-  handleRefresh = () => {
-    this.props.getNotes();
-  };
-
   componentDidMount() {
     this.props.getNotes();
   }
@@ -54,10 +50,6 @@ class Diary extends React.Component {
               >
                 <Icon name="plus" />
                 Добавить заметку
-              </Button>
-              <Button color="blue" onClick={this.handleRefresh}>
-                <Icon name="refresh" />
-                Обновить
               </Button>
               <div className="diary">
                 <DailyNotes

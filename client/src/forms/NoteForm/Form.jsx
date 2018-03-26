@@ -40,15 +40,18 @@ const form = props => {
 const constraints = {
   title: {
     presence: {
-      allowEmpty: false
+      allowEmpty: false,
+      message: "^Обязательное поле"
     },
     length: {
-      maximum: 60
+      maximum: 60,
+      message: "^Максимальная длина 60 симоволов"
     }
   },
   text: {
     presence: {
-      allowEmpty: false
+      allowEmpty: false,
+      message: "^Обязательное поле"
     }
   }
 };
