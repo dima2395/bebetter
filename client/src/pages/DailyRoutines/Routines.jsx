@@ -8,6 +8,10 @@ export default class extends React.Component {
       processing: "yellow",
       completed: "green"
     };
+    const statusToRussian = {
+      completed: "Приобретена",
+      processing: "В процессе приобретения"
+    };
     const routinesList = this.props.routines.map((routine, index) => {
       const createdAt = routine.get("createdAt");
       const status = routine.get("status");
@@ -27,7 +31,7 @@ export default class extends React.Component {
                     className="routine-status"
                   />
                 }
-                content={status}
+                content={statusToRussian[status]}
                 inverted
                 position="bottom center"
               />
