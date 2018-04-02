@@ -74,7 +74,11 @@ class DailyRoutine extends React.Component {
           </Grid.Column>
         </Grid>
         <RoutineModal />
-        <RoutineProgressModal className="routine-progress-modal" />
+        <RoutineProgressModal
+          className="routine-progress-modal"
+          size="tiny"
+          scrolling
+        />
         <RoutineDeleteModal />
       </div>
     );
