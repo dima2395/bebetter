@@ -132,92 +132,91 @@ body {
       flex: 1;
       font-family: "PT Sans", sans-serif;
       font-size: 18px;
-      .diary-page {
-        .diary-wrapper {
-          min-height: 750px;
-          & > .diary {
+      .page-main-segment {
+        min-height: 850px;
+      }
+      & > .diary {
+        .diary-notes {
+          position: relative;
+          & > .day {
+            margin: 20px auto 40px;
             position: relative;
-            & > .day {
-              margin: 20px auto 40px;
-              position: relative;
-              text-align: center;
-              & > .date {
-                background-color: #5894de;
-                display: inline-block;
-                padding: 10px 15px;
-                font-size: 18px;
-                color: white;
-                border: 1px solid #d4d4d5;
-                border-radius: 4px;
-              }
-              & > .notes {
-                margin-top: 60px;
-                & > .note {
-                  text-align: left;
+            text-align: center;
+            & > .date {
+              background-color: #5894de;
+              display: inline-block;
+              padding: 10px 15px;
+              font-size: 18px;
+              color: white;
+              border: 1px solid #d4d4d5;
+              border-radius: 4px;
+            }
+            & > .notes {
+              margin-top: 60px;
+              & > .note {
+                text-align: left;
+                position: relative;
+                margin-bottom: 45px;
+                &:before {
+                  content: "";
+                  width: 50px;
+                  height: 50px;
+                  background-color: #fff;
+                  position: absolute;
+                  left: 50%;
+                  bottom: 100%;
+                  margin-bottom: -57px;
+                  margin-left: -25px; //
+                  transform: rotate(45deg);
+                  z-index: 2;
+                  border-top: 1px solid #d4d4d5;
+                  border-left: 1px solid #d4d4d5;
+                }
+                & > .card {
+                  .actions {
+                    padding-left: 10px;
+                    i {
+                      margin-right: 5px;
+                      &:hover {
+                        cursor: pointer;
+                      }
+                    }
+                  }
+                  .text {
+                    & > p {
+                      white-space: pre-wrap;
+                      font-size: 16px;
+                    }
+                  }
+                }
+                & > .time {
                   position: relative;
-                  margin-bottom: 45px;
-                  &:before {
-                    content: "";
-                    width: 50px;
-                    height: 50px;
-                    background-color: #fff;
-                    position: absolute;
-                    left: 50%;
-                    bottom: 100%;
-                    margin-bottom: -57px;
-                    margin-left: -25px; //
-                    transform: rotate(45deg);
-                    z-index: 2;
-                    border-top: 1px solid #d4d4d5;
-                    border-left: 1px solid #d4d4d5;
-                  }
-                  & > .card {
-                    .actions {
-                      padding-left: 10px;
-                      i {
-                        margin-right: 5px;
-                        &:hover {
-                          cursor: pointer;
-                        }
-                      }
-                    }
-                    .text {
-                      & > p {
-                        white-space: pre-wrap;
-                        font-size: 16px;
-                      }
-                    }
-                  }
-                  & > .time {
-                    position: relative;
-                    display: inline-block;
-                    left: 50%;
-                    transform: translate(-50%, 0);
-                    top: 13px;
-                    font-style: italic;
-                    font-weight: bold;
-                    z-index: 2;
-                  }
+                  display: inline-block;
+                  left: 50%;
+                  transform: translate(-50%, 0);
+                  top: 13px;
+                  font-style: italic;
+                  font-weight: bold;
+                  z-index: 2;
                 }
               }
             }
-            &:before {
-              content: "";
-              height: 100%;
-              position: absolute;
-              border-left: 2px dashed $main-color;
-              border-right: 2px dashed $main-color;
-              left: 50%;
-              top: 0;
-              transform: translate(-50%, 0);
-              z-index: 0;
-            }
+          }
+          &:before {
+            content: "";
+            height: 100%;
+            position: absolute;
+            border-left: 2px dashed $main-color;
+            border-right: 2px dashed $main-color;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
+            z-index: 0;
           }
         }
       }
-      .daily-routine-page {
+      & > .daily-routine {
         .routines {
-          min-height: 750px;
           margin-top: 10px;
           .routine {
             &-status {

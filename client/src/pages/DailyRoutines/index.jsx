@@ -50,10 +50,10 @@ class DailyRoutine extends React.Component {
   render() {
     const { loading } = this.props;
     return (
-      <div className="daily-routine-page">
+      <div className="daily-routine">
         <Grid>
           <Grid.Column width={16}>
-            <Segment loading={loading}>
+            <Segment loading={loading} className="page-main-segment">
               <h1>Привычки</h1>
               <div className="controls">
                 <Button

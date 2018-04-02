@@ -554,21 +554,21 @@ body {
   font-size: 18px;
 }
 
-.app .main .page .diary-page .diary-wrapper {
-  min-height: 750px;
+.app .main .page .page-main-segment {
+  min-height: 850px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary {
+.app .main .page > .diary .diary-notes {
   position: relative;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day {
+.app .main .page > .diary .diary-notes > .day {
   margin: 20px auto 40px;
   position: relative;
   text-align: center;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .date {
+.app .main .page > .diary .diary-notes > .day > .date {
   background-color: #5894de;
   display: inline-block;
   padding: 10px 15px;
@@ -578,17 +578,17 @@ body {
   border-radius: 4px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes {
+.app .main .page > .diary .diary-notes > .day > .notes {
   margin-top: 60px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note {
+.app .main .page > .diary .diary-notes > .day > .notes > .note {
   text-align: left;
   position: relative;
   margin-bottom: 45px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note:before {
+.app .main .page > .diary .diary-notes > .day > .notes > .note:before {
   content: "";
   width: 50px;
   height: 50px;
@@ -604,24 +604,24 @@ body {
   border-left: 1px solid #d4d4d5;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note > .card .actions {
+.app .main .page > .diary .diary-notes > .day > .notes > .note > .card .actions {
   padding-left: 10px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note > .card .actions i {
+.app .main .page > .diary .diary-notes > .day > .notes > .note > .card .actions i {
   margin-right: 5px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note > .card .actions i:hover {
+.app .main .page > .diary .diary-notes > .day > .notes > .note > .card .actions i:hover {
   cursor: pointer;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note > .card .text > p {
+.app .main .page > .diary .diary-notes > .day > .notes > .note > .card .text > p {
   white-space: pre-wrap;
   font-size: 16px;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary > .day > .notes > .note > .time {
+.app .main .page > .diary .diary-notes > .day > .notes > .note > .time {
   position: relative;
   display: inline-block;
   left: 50%;
@@ -632,7 +632,7 @@ body {
   z-index: 2;
 }
 
-.app .main .page .diary-page .diary-wrapper > .diary:before {
+.app .main .page > .diary .diary-notes:before {
   content: "";
   height: 100%;
   position: absolute;
@@ -644,12 +644,11 @@ body {
   z-index: 0;
 }
 
-.app .main .page .daily-routine-page .routines {
-  min-height: 750px;
+.app .main .page > .daily-routine .routines {
   margin-top: 10px;
 }
 
-.app .main .page .daily-routine-page .routines .routine-status {
+.app .main .page > .daily-routine .routines .routine-status {
   float: right;
 }
 

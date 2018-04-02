@@ -39,10 +39,10 @@ class Diary extends React.Component {
   render() {
     const { loading, deleteLoading } = this.props;
     return (
-      <div className="diary-page">
+      <div className="diary">
         <Grid>
           <Grid.Column width={12}>
-            <Segment loading={loading} className="diary-wrapper">
+            <Segment loading={loading} className="page-main-segment">
               <h1>Дневник</h1>
               <Button
                 color="green"
@@ -51,7 +51,7 @@ class Diary extends React.Component {
                 <Icon name="plus" />
                 Добавить заметку
               </Button>
-              <div className="diary">
+              <div className="diary-notes">
                 <DailyNotes
                   notes={this.props.notes}
                   openDeleteNoteModal={this.openDeleteNoteModal}

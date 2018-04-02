@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <Segment>
+        <Segment className="page-main-segment">
           <h1>Добро пожаловать</h1>
           <h3>BeBetter - приложение позволяющее вам стать лучше.</h3>
         </Segment>
