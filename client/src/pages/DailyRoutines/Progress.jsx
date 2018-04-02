@@ -2,12 +2,9 @@ import React from "react";
 import { updateRoutineProgress } from "reducers/routines";
 import { connect } from "react-redux";
 import Immutable from "immutable";
-import Moment from "moment";
 import { Icon, Popup, Segment } from "semantic-ui-react";
-import { extendMoment } from "moment-range";
 import ProgressStats from "./ProgressStats";
-
-const moment = extendMoment(Moment);
+import moment from "libs/moment";
 
 class Progress extends React.Component {
   state = {
@@ -30,19 +27,22 @@ class Progress extends React.Component {
       done: {
         icon: "check",
         color: "green",
-        popup: "done",
+        popup: "Выполнено",
+        key: "done",
         toggleValue: false
       },
       failed: {
         icon: "delete",
         color: "red",
-        popup: "failed",
+        popup: "Не выполнено",
+        key: "failed",
         toggleValue: true
       },
       not_indicated: {
         icon: "minus",
         color: "yellow",
-        popup: "not_indicated",
+        popup: "Не указано",
+        key: "not_indicated",
         toggleValue: true
       }
     };
@@ -78,9 +78,9 @@ class Progress extends React.Component {
     let progress = Immutable.List([]);
 
     mapDateToStatus.forEach((status, day) => {
-      stats[status.popup]++;
+      stats[status.key]++;
       progress = progress.push(
-        <div className="day-wrapper" key={`${status.popup}-${day}`}>
+        <div className="day-wrapper" key={`${status.key}-${day}`}>
           <span
             className="day"
             onClick={this.handleChangeStatus.bind(

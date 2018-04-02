@@ -1,5 +1,5 @@
 import React from "react";
-import moment from "moment";
+import moment from "libs/moment";
 import { Icon, Card } from "semantic-ui-react";
 
 class DailyNotes extends React.Component {
@@ -61,7 +61,7 @@ class DailyNotes extends React.Component {
   render() {
     const modified_notes = this.modifyNotes(this.props.notes);
     return modified_notes.map((notes, i) => {
-      var date = moment(notes[0].get("createdAt")).format("MMMM Do");
+      var date = moment(notes[0].get("createdAt")).format("DD MMMM");
       return (
         <div className="day" key={date}>
           <span className="date">{date}</span>
