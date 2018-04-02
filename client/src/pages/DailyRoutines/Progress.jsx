@@ -110,7 +110,7 @@ class Progress extends React.Component {
 
     return (
       <Segment textAlign="center">
-        <b>Stats:</b>
+        <b>Статистика:</b>
         <ProgressStats stats={stats} />
         {progress}
       </Segment>

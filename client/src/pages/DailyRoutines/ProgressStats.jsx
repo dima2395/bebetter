@@ -20,7 +20,10 @@ class ProgressStats extends React.Component {
               }}
             />
           }
-          content={`Done(${precisionRound(stats.done / stats.all * 100, 2)}%)`}
+          content={`Выполнено(${precisionRound(
+            stats.done / stats.all * 100,
+            2
+          )}%)`}
           inverted
           position="bottom center"
         />
@@ -35,7 +38,7 @@ class ProgressStats extends React.Component {
               }}
             />
           }
-          content={`Not indicated(${precisionRound(
+          content={`Не указано(${precisionRound(
             stats.not_indicated / stats.all * 100,
             2
           )}%)`}
@@ -53,7 +56,7 @@ class ProgressStats extends React.Component {
               }}
             />
           }
-          content={`Failed(${precisionRound(
+          content={`Не выполнено(${precisionRound(
             stats.failed / stats.all * 100,
             2
           )}%)`}
