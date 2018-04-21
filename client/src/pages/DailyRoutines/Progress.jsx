@@ -54,15 +54,15 @@ class Progress extends React.Component {
       mapDateToStatus = mapDateToStatus.set(key, value);
     });
 
-    this.props.routine.get("progress").forEach(daily_progress => {
-      if (daily_progress.get("done") === true) {
+    this.props.routine.get("progress").forEach(dailyProgress => {
+      if (dailyProgress.get("done") === true) {
         mapDateToStatus = mapDateToStatus.set(
-          daily_progress.get("day"),
+          dailyProgress.get("day"),
           statuses["done"]
         );
       } else {
         mapDateToStatus = mapDateToStatus.set(
-          daily_progress.get("day"),
+          dailyProgress.get("day"),
           statuses["failed"]
         );
       }

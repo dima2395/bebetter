@@ -80,12 +80,12 @@ export function* updateRoutineProgress(action) {
   try {
     const res = yield call(
       api.routines.progress.update,
-      action.routine_id,
-      action.daily_progress
+      action.routineId,
+      action.dailyProgress
     );
     yield put({
       type: actionTypes.progress.update.success,
-      daily_progress: res.data.get("daily_progress")
+      dailyProgress: res.data.get("dailyProgress")
     });
   } catch (e) {
     yield put({

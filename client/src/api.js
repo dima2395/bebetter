@@ -6,7 +6,7 @@ import { addMessage } from "reducers/messages";
 const config = {
   baseURL: "/api/",
   transformResponse: [
-    function(data) {
+    function (data) {
       const immutableData = Immutable.fromJS(JSON.parse(data));
       const message = immutableData.get("message");
       if (message) {
@@ -18,50 +18,50 @@ const config = {
   ]
 };
 
-const api_axios = axios.create(config);
+const apiAxios = axios.create(config);
 
 const api = {
   notes: {
     get: (id = "") => {
-      return api_axios.get(`/notes/${id}`);
+      return apiAxios.get(`/notes/${id}`);
     },
     create: note => {
-      return api_axios.post("/notes", {
+      return apiAxios.post("/notes", {
         ...note
       });
     },
     update: (id, note) => {
-      return api_axios.put(`/notes/${id}`, {
+      return apiAxios.put(`/notes/${id}`, {
         ...note
       });
     },
     delete: id => {
-      return api_axios.delete(`/notes/${id}`);
+      return apiAxios.delete(`/notes/${id}`);
     }
   },
 
   routines: {
     get: (id = "") => {
-      return api_axios.get(`/routines/${id}`);
+      return apiAxios.get(`/routines/${id}`);
     },
     create: routine => {
-      return api_axios.post("/routines", { routine });
+      return apiAxios.post("/routines", { routine });
     },
     update: (id, routine) => {
-      return api_axios.put(`/routines/${id}`, {
+      return apiAxios.put(`/routines/${id}`, {
         routine
       });
     },
     delete: id => {
-      return api_axios.delete(`/routines/${id}`);
+      return apiAxios.delete(`/routines/${id}`);
     },
     progress: {
-      get: (routine_id = "") => {
-        return api_axios.get(`/routines/${routine_id}/progress`);
+      get: (routineId = "") => {
+        return apiAxios.get(`/routines/${routineId}/progress`);
       },
-      update: (routine_id, daily_progress) => {
-        return api_axios.post(`/routines/${routine_id}/progress`, {
-          daily_progress
+      update: (routineId, dailyProgress) => {
+        return apiAxios.post(`/routines/${routineId}/progress`, {
+          dailyProgress
         });
       }
     }

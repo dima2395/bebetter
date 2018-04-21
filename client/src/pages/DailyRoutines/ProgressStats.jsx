@@ -68,9 +68,9 @@ class ProgressStats extends React.Component {
   }
 }
 
-function precisionRound(number, precision) {
+function precisionRound(num, precision) {
   var factor = Math.pow(10, precision);
-  return Math.round(number * factor) / factor;
+  return Math.round(num * factor) / factor;
 }
 
 export default ProgressStats;

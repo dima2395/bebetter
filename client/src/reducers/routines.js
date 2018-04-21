@@ -51,19 +51,19 @@ export default function reducer(state = INITIAL_STATE, action) {
         const routineIndex = routines.findIndex(routine => {
           return (
             routine.get("id") ===
-            parseInt(action.daily_progress.get("routine_id"), 10)
+            parseInt(action.dailyProgress.get("routine_id"), 10)
           );
         });
         return routines.update(routineIndex, routine => {
           return routine.update("progress", progress => {
             const indexToReplace = progress.findIndex(
-              daily_progress =>
-                daily_progress.get("day") === action.daily_progress.get("day")
+              dailyProgress =>
+                dailyProgress.get("day") === action.dailyProgress.get("day")
             );
             if (indexToReplace === -1) {
-              return progress.unshift(action.daily_progress);
+              return progress.unshift(action.dailyProgress);
             } else {
-              return progress.set(indexToReplace, action.daily_progress);
+              return progress.set(indexToReplace, action.dailyProgress);
             }
           });
         });
@@ -94,8 +94,8 @@ export const updateRoutine = (id, routine) => ({
 
 export const deleteRoutine = id => ({ type: actionTypes.delete.request, id });
 
-export const updateRoutineProgress = (routine_id, daily_progress) => ({
+export const updateRoutineProgress = (routineId, dailyProgress) => ({
   type: actionTypes.progress.update.request,
-  routine_id,
-  daily_progress
+  routineId,
+  dailyProgress
 });

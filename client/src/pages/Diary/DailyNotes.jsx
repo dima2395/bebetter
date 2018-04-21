@@ -5,21 +5,21 @@ import { Icon, Card } from "semantic-ui-react";
 class DailyNotes extends React.Component {
   modifyNotes(notes) {
     let dateToIndex = {}; // maps note date to modified_notes's index
-    let modified_notes = [];
+    let modifiedNotes = [];
 
     notes.forEach(note => {
       var date = note.get("createdAt").split("T")[0];
       if (dateToIndex[date]) {
         const index = dateToIndex[date];
-        modified_notes[index].push(note);
+        modifiedNotes[index].push(note);
       } else {
         // convert index to string because 0 is falsy, but "0" is not falsy
-        dateToIndex[date] = modified_notes.length + "";
+        dateToIndex[date] = modifiedNotes.length + "";
         const index = dateToIndex[date];
-        modified_notes[index] = [note];
+        modifiedNotes[index] = [note];
       }
     });
-    return modified_notes;
+    return modifiedNotes;
   }
 
   renderNotes(notes) {
@@ -59,8 +59,8 @@ class DailyNotes extends React.Component {
   }
 
   render() {
-    const modified_notes = this.modifyNotes(this.props.notes);
-    return modified_notes.map((notes, i) => {
+    const modifiedNotes = this.modifyNotes(this.props.notes);
+    return modifiedNotes.map((notes, i) => {
       var date = moment(notes[0].get("createdAt")).format("DD MMMM");
       return (
         <div className="day" key={date}>
