@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon, Popup, Card } from "semantic-ui-react";
+import { Button, Icon, Popup, Card, Grid } from "semantic-ui-react";
 import moment from "moment";
 
 export default class extends React.Component {
@@ -19,66 +19,68 @@ export default class extends React.Component {
       const date = moment(createdAt).fromNow();
       const statusColor = statusToColor[status];
       return (
-        <Card key={id} className="routine">
-          <Card.Content>
-            <Card.Header>
-              {routine.get("text")}
-              <Popup
-                trigger={
-                  <Icon
-                    name="circle"
-                    color={statusColor}
-                    className="routine-status"
-                  />
-                }
-                content={statusToRussian[status]}
-                inverted
-                position="bottom center"
-              />
-            </Card.Header>
-            <Card.Meta>
-              <Popup
-                trigger={<time dateTime={createdAt}>{date}</time>}
-                content={moment(createdAt).format("DD MMM YYYY HH:mm")}
-                inverted
-                position="bottom left"
-              />
-            </Card.Meta>
-            <Card.Description />
-          </Card.Content>
-          <Card.Content extra>
-            <div className="ui two buttons">
-              <Button.Group fluid>
-                <Button
-                  basic
-                  color="green"
-                  onClick={() => this.props.openRoutineModal(routine)}
-                >
-                  Изменить
+        <div className="routine col-lg-4 col-md-6 col-sm-12">
+          <Card fluid key={id}>
+            <Card.Content>
+              <Card.Header>
+                {routine.get("text")}
+                <Popup
+                  trigger={
+                    <Icon
+                      name="circle"
+                      color={statusColor}
+                      className="routine-status"
+                    />
+                  }
+                  content={statusToRussian[status]}
+                  inverted
+                  position="bottom center"
+                />
+              </Card.Header>
+              <Card.Meta>
+                <Popup
+                  trigger={<time dateTime={createdAt}>{date}</time>}
+                  content={moment(createdAt).format("DD MMM YYYY HH:mm")}
+                  inverted
+                  position="bottom left"
+                />
+              </Card.Meta>
+              <Card.Description />
+            </Card.Content>
+            <Card.Content extra>
+
+
+              <Button
+                basic
+                color="green"
+                onClick={() => this.props.openRoutineModal(routine)}
+              >
+                Изменить
                 </Button>
-                <Button
-                  basic
-                  color="blue"
-                  onClick={() => this.props.openProgressModal(routine)}
-                >
-                  Прогресс
+              <Button
+                basic
+                color="blue"
+                onClick={() => this.props.openProgressModal(routine)}
+              >
+                Прогресс
                 </Button>
-                <Button
-                  basic
-                  color="red"
-                  onClick={() => this.props.openDeleteRoutineModal(id)}
-                >
-                  Удалить
+              <Button
+                basic
+                color="red"
+                onClick={() => this.props.openDeleteRoutineModal(id)}
+              >
+                Удалить
                 </Button>
-              </Button.Group>
-            </div>
-          </Card.Content>
-        </Card>
+
+
+            </Card.Content>
+          </Card>
+        </div>
       );
     });
     return (
-      <div className="routines">
-        <Card.Group itemsPerRow={4}>{routinesList}</Card.Group>
+      <div className="row routines">
+        {routinesList}
       </div>
     );
   }

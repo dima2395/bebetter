@@ -648,6 +648,10 @@ body {
   margin-top: 10px;
 }
 
+.app .main .page > .daily-routine .routines .routine {
+  margin-bottom: 15px;
+}
+
 .app .main .page > .daily-routine .routines .routine-status {
   float: right;
 }
